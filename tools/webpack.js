@@ -48,11 +48,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new Clean([DIST], {root: CWD}),
+        new Clean([DIST], {root: CWD})/*,
         new webpack.optimize.UglifyJsPlugin({
             compress: {warnings: false},
             output: {comments: false},
             sourceMap: true
-        })
+        })*/
     ]
 };

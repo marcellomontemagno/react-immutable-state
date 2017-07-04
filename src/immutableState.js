@@ -1,12 +1,12 @@
 import deepFreeze from 'deep-freeze';
 
-const isDev = process.env.NODE_ENV !== "production";
-
 export default (Component) => {
 
     let result = Component;
 
-    if (isDev) {
+    if (process.env.NODE_ENV !== "production") {
+
+        console.log('=== dependency running in dev mode ===');
 
         result = class extends Component {
             constructor (props) {
