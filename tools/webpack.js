@@ -4,6 +4,7 @@ const path = require('path');
 const qs = require('qs');
 const webpack = require('webpack');
 const Clean = require('clean-webpack-plugin');
+const WrapperPlugin = require('wrapper-webpack-plugin');
 
 const CWD = process.cwd();
 const NODE_MODULES = path.join(CWD, 'node_modules');
@@ -49,6 +50,10 @@ module.exports = {
     },
     plugins: [
         new Clean([DIST], {root: CWD}),
+        new WrapperPlugin({
+            header: 'var __is__dev__ = process.env.NODE_ENV !== "production";\n\n',
+            footer: ''
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {warnings: false},
             output: {comments: false},

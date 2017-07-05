@@ -1,12 +1,12 @@
 import deepFreeze from 'deep-freeze';
 
-const isDev = process.env.NODE_ENV !== "production";
-
 export default (Component) => {
 
     let result = Component;
 
-    if (isDev) {
+    if (__is__dev__) {
+
+        window.__IS_REACT_IMMUTABLE_STATE_ACTIVE__ = true;
 
         result = class extends Component {
             constructor (props) {
