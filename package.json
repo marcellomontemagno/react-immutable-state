@@ -1,6 +1,6 @@
 {
   "name": "react-immutable-state",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Enforces state immutability on react components",
   "main": "dist/dist.js",
   "scripts": {
