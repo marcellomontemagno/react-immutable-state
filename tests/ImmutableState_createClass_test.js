@@ -2,6 +2,8 @@ import React from 'react';
 import immutableState from '../src/immutableState';
 import {mount, render} from 'enzyme';
 
+global.__is__dev__ = true;
+
 let defaultSpec = {
 
     getInitialState(){
